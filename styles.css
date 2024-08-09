@@ -9,6 +9,20 @@
   --text01: #65737e;
   --text02: #184568;
   --text03: #a0a7ad;
+
+  --bg: #f4eee4;
+}
+
+* {
+  font-family: "Open Sans", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Roboto Slab", serif;
 }
 
 .btn-custom {
@@ -25,12 +39,22 @@
 
 .text_shadow {
   color: var(--primary01) !important;
+  font-family: "Roboto Slab", serif;
   text-shadow: 1px 1px 2px rgb(69, 68, 68);
 }
 
-/* ---------------------------------- navbar ----------------------------------  */
+.heading_line::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background-color: var(--primary01);
+  margin: 8px auto 0;
+}
+
+/* ---------------------------------- Navbar ----------------------------------  */
 .navbar {
-  padding: 0;
+  padding: 10px 0;
   background-color: var(--primary04);
 }
 
@@ -97,18 +121,39 @@
 
 #typing {
   display: inline-block;
-  line-height: 1.2; /* Adjust this value if needed */
-  padding: 0; /* Ensure there’s no padding */
-  margin: 0; /* Ensure there’s no margin */
-  font-size: 2.5rem; /* Adjust to your desired font size */
-  vertical-align: middle; /* Aligns the cursor with the text */
+  line-height: 1.2;
+  padding: 0;
+  margin: 0;
+  font-size: 2.5rem;
+  vertical-align: middle;
 }
 
 .typed-cursor {
   font-size: 2.5rem;
   line-height: 1.2;
   color: var(--primary01);
-  vertical-align: middle; /* Aligns the cursor vertically with the text */
+  vertical-align: middle;
+}
+
+/* ---------------------------------- About ----------------------------------  */
+.about {
+  padding: 70px 0;
+  background-color: var(--bg);
+}
+
+.about h2 {
+  color: var(--text01);
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.about .content {
+  text-align: left;
+  color: var(--text02);
+}
+
+.about .content p {
+  line-height: 28px;
 }
 
 /* ---------------------------------- MediaQuery ----------------------------------  */
@@ -165,11 +210,19 @@
     width: 150px;
     margin-bottom: 30px;
   }
+
+  .about {
+    padding: 50px 0;
+  }
 }
 
 @media (width <= 425px) {
   .navbar-brand img {
     width: 135px;
+  }
+
+  .about h2 {
+    margin-bottom: 30px;
   }
 }
 
