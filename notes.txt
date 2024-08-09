@@ -1,0 +1,37 @@
+The first thing, it should appear in a portfolio is Summary.
+In Summary,
+1) Any conclusions that you drawn
+2) Any challenges that you face
+3) Any cool techniques that you use
+4) What you might do if you have more time to work on the problem
+
+Show where you get the dataset is from.
+
+What techniques you should showcase?
+1) Data Acquisition - Can you get data from a variety of sources in a robust and error free manner
+2) Data Preparation - Make sure you showcase you data preparation techniques.
+    It includes - 
+        Cleaning your data
+        (a) Cleaning your data
+        (b) Removing incomplete values
+        Data manipulation techniques
+        (a) Converting to different data types 
+        (b) Creating new features
+        More complex techniques
+        (a) High-dimensional transformation 
+        (b) Machine learning
+        Data Analytics
+        (a)Descriptive
+        (b)Diagnostic
+        Data Visualization
+
+
+1) Data Cleaning and transformation
+2) Data analysis
+3) Data Visualization
+4) DE/DS
+5) Communication
+
+kaggle
+awesome public datasets on github
+

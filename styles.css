@@ -1,0 +1,187 @@
+:root {
+  --primary01: #713d3d;
+  --primary02: #b87878;
+  --primary03: #dbb5b5;
+  --primary04: #f1e5d1;
+
+  --white: #fbfbfb;
+
+  --text01: #65737e;
+  --text02: #184568;
+  --text03: #a0a7ad;
+}
+
+.btn-custom {
+  background-color: var(--primary02);
+  color: var(--white);
+  padding: 10px 25px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.btn-custom:hover {
+  background-color: var(--primary01);
+  color: var(--white);
+}
+
+.text_shadow {
+  color: var(--primary01) !important;
+  text-shadow: 1px 1px 2px rgb(69, 68, 68);
+}
+
+/* ---------------------------------- navbar ----------------------------------  */
+.navbar {
+  padding: 0;
+  background-color: var(--primary04);
+}
+
+.navbar .navbar-nav .nav-item {
+  line-height: 60px;
+  width: 180px;
+  text-align: center;
+}
+
+.navbar .navbar-nav .navbar-brand {
+  width: 250px;
+  text-align: center;
+  margin-right: 0px;
+}
+
+.navbar .navbar-nav .nav-item .active {
+  color: var(--primary01);
+}
+
+.navbar .navbar-nav .nav-link {
+  color: var(--primary02);
+}
+
+.navbar .navbar-nav .nav-item a:hover {
+  color: var(--primary01);
+}
+
+/* ---------------------------------- Introduction ----------------------------------  */
+.intro {
+  padding: 80px 0;
+  background-image: url("./images/circles.png");
+  background-repeat: no-repeat;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.introduce_section {
+  text-align: left;
+  border: 1px solid var(--primary01);
+  border-radius: 15px;
+  padding: 40px 50px;
+}
+
+.introduce_section .greet {
+  color: var(--text01);
+}
+
+.introduce_section .role {
+  color: var(--text03);
+  margin-bottom: 25px;
+}
+
+.introduce_section .objective {
+  color: var(--text02);
+  margin-bottom: 20px;
+}
+
+.profile_img {
+  text-align: center;
+}
+
+#typing {
+  display: inline-block;
+  line-height: 1.2; /* Adjust this value if needed */
+  padding: 0; /* Ensure there’s no padding */
+  margin: 0; /* Ensure there’s no margin */
+  font-size: 2.5rem; /* Adjust to your desired font size */
+  vertical-align: middle; /* Aligns the cursor with the text */
+}
+
+.typed-cursor {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: var(--primary01);
+  vertical-align: middle; /* Aligns the cursor vertically with the text */
+}
+
+/* ---------------------------------- MediaQuery ----------------------------------  */
+@media (width < 992px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .navbar .navbar-nav .nav-item {
+    margin-top: 10px;
+    width: 100%;
+    text-align: left;
+    padding-left: 10px;
+    border: 1px solid var(--primary03);
+    line-height: 20px;
+    border-radius: 5px;
+  }
+
+  .navbar .navbar-nav .nav-item:hover,
+  .navbar .navbar-nav .active-item {
+    border: 1px solid var(--primary01);
+    border-radius: 5px;
+  }
+
+  .introduce_section {
+    padding: 30px 20px;
+  }
+
+  #typing,
+  .typed-cursor {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .introduce_section .role {
+    margin-bottom: 15px;
+  }
+
+  .intro {
+    padding: 60px 0;
+  }
+
+  .profile_img img {
+    width: 280px;
+  }
+}
+
+@media (width <= 767px) {
+  .intro {
+    padding: 40px 0;
+    background-image: url("./images/circles2.png");
+  }
+  .img_circle img {
+    width: 150px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (width <= 425px) {
+  .navbar-brand img {
+    width: 135px;
+  }
+}
+
+@media (width < 375px) {
+  #typing,
+  .typed-cursor {
+    font-size: 1.7rem;
+    margin-bottom: 5px;
+  }
+
+  .introduce_section .role {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+}
