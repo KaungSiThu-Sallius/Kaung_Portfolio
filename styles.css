@@ -156,6 +156,45 @@ h5 {
   line-height: 28px;
 }
 
+/* ---------------------------------- ExpertAreas ----------------------------------  */
+.expert {
+  padding: 60px 0;
+}
+
+.expert h2 {
+  color: var(--text01);
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.expert .skills {
+  background-color: var(--bg);
+  width: 700px;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.list-inline {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.list-inline li {
+  flex: 1 1 45%;
+  margin-bottom: 10px;
+  min-width: 200px;
+  color: var(--text02);
+}
+.expert .tools {
+  background-color: var(--bg);
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
 /* ---------------------------------- MediaQuery ----------------------------------  */
 @media (width < 992px) {
   .navbar {
@@ -199,6 +238,10 @@ h5 {
   .profile_img img {
     width: 280px;
   }
+
+  .expert .skills {
+    width: initial;
+  }
 }
 
 @media (width <= 767px) {
@@ -234,7 +277,15 @@ h5 {
     font-size: 1.2rem;
     margin-bottom: 10px;
   }
+
+  .list-inline li {
+    flex: 1 1 100%; /* One item per row */
+  }
 }
 
 @media (width < 375px) {
+  .expert .tools {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
 }
