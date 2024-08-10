@@ -19,3 +19,28 @@ window.addEventListener('scroll', function () {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(button => button.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.getAttribute('data-filter');
+
+            projectItems.forEach(item => {
+                if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                    item.classList.add('active');
+                } else {
+                    item.classList.remove('active');
+                }
+            });
+        });
+    });
+
+    // Set the default filter (e.g., show all projects)
+    document.querySelector('.filter-btn[data-filter="all"]').click();
+});
+
+

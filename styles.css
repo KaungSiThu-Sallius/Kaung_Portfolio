@@ -159,6 +159,8 @@ h5 {
 /* ---------------------------------- ExpertAreas ----------------------------------  */
 .expert {
   padding: 60px 0;
+  background-image: url("./images/circles3.png");
+  background-repeat: no-repeat;
 }
 
 .expert h2 {
@@ -198,6 +200,61 @@ h5 {
 .expert .tools img {
   margin-bottom: 10px;
 }
+
+/* ---------------------------------- Portfolio ----------------------------------  */
+.portfolio {
+  padding: 60px 0;
+  background-color: var(--bg);
+  text-align: center;
+}
+
+.portfolio h2 {
+  color: var(--text01);
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.filters {
+  margin-bottom: 20px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: 1px solid var(--primary01);
+  background-color: var(--white);
+  color: var(--primary01);
+  cursor: pointer;
+  margin: 0 10px;
+  border-radius: 7px;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background-color: var(--primary01);
+  color: white;
+}
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-item {
+  display: none;
+  width: 200px;
+  height: 150px;
+  margin: 15px;
+  background-color: #e0e0e0;
+  line-height: 150px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.project-item.active {
+  display: block;
+}
+
 /* ---------------------------------- MediaQuery ----------------------------------  */
 @media (width < 992px) {
   .navbar {
@@ -260,6 +317,10 @@ h5 {
   .about {
     padding: 40px 0;
   }
+
+  .filter-btn {
+    margin-bottom: 20px;
+  }
 }
 
 @media (width <= 425px) {
@@ -287,7 +348,8 @@ h5 {
 }
 
 @media (width < 375px) {
-  .expert .tools {
+  .expert .tools,
+  .expert .skills {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
