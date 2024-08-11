@@ -287,6 +287,65 @@ h5 {
   margin: 0 10px;
   line-height: 45px;
 }
+
+/* ---------------------------------- Contact ----------------------------------  */
+.contact {
+  background-image: url("images/circles.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contact h2 {
+  margin-bottom: 40px;
+  color: var(--text01);
+}
+.contact .card {
+  background-color: var(--bg);
+  color: var(--text02) !important;
+}
+
+.contact h4 {
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+.contact a.d-flex.flex-column.align-items-center img {
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  margin-top: 10px;
+}
+
+.contact a.d-flex.flex-column.align-items-center span {
+  margin-top: 2px;
+  font-size: 14px; /* Adjust the font size as needed */
+}
+
+.divider {
+  height: 1px;
+  width: 80%;
+  background-color: gray;
+  margin: 0 auto;
+  opacity: 0.5;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.contact .row {
+  align-items: start;
+}
+
+/* ---------------------------------- Footer ----------------------------------  */
+.footer {
+  background-color: var(--bg);
+  padding: 8px 0;
+}
+.footer p {
+  margin: 0;
+  color: var(--text02);
+  font-size: 14px;
+  opacity: 0.6;
+}
+
 /* ---------------------------------- MediaQuery ----------------------------------  */
 @media (width < 992px) {
   .navbar {
@@ -376,6 +435,9 @@ h5 {
 
   .list-inline li {
     flex: 1 1 100%; /* One item per row */
+  }
+  .phone_email {
+    margin-left: 0;
   }
 }
 
