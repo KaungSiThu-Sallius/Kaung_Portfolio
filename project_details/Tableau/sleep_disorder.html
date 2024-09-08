@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau - Employee Turnover Analysis</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="../../bootstrap/bootstrap.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+
+    <!-- Pace.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Loader CSS -->
+    <link rel="stylesheet" href="../../loader.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles.css">
+
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand d-lg-none" href="/">
+                <img src="../../images/LOGO.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item active-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html#about">About Me</a>
+                    </li>
+                    <a class="navbar-brand d-none d-lg-block" href="/">
+                        <img src="../../images/LOGO.png" alt="Logo">
+                    </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html#contact">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="tableau_viz my-5">
+        <div class="container d-flex justify-content-center">
+            <div class='tableauPlaceholder' id='viz1725777891305'
+                style='position: relative; width: 100%; max-width: 1200px; height: 100vh; overflow: hidden;'>
+                <noscript>
+                    <a href='#'>
+                        <img alt=' '
+                            src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sl&#47;SleepDisorderAnalysis&#47;SleepDisorderDashboard&#47;1_rss.png'
+                            style='border: none' />
+                    </a>
+                </noscript>
+                <object class='tableauViz' style='display:none;  width: 100%; height: 100%;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='SleepDisorderAnalysis&#47;SleepDisorderDashboard' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='static_image'
+                        value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Sl&#47;SleepDisorderAnalysis&#47;SleepDisorderDashboard&#47;1.png' />
+                    <param name='animate_transition' value='yes' />
+                    <param name='display_static_image' value='yes' />
+                    <param name='display_spinner' value='yes' />
+                    <param name='display_overlay' value='yes' />
+                    <param name='display_count' value='yes' />
+                    <param name='language' value='en-US' />
+                </object>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <script type='text/javascript'>
+        var divElement = document.getElementById('viz1725777891305');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+
+        if (divElement.offsetWidth > 800) {
+            vizElement.style.width = '100%';
+            vizElement.style.height = '827px';
+        } else if (divElement.offsetWidth > 500) {
+            vizElement.style.width = '100%';
+            vizElement.style.height = '827px';
+        } else {
+            vizElement.style.width = '100%';
+            vizElement.style.height = '2227px';
+        }
+
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+
+
+    <div class="readme mt-4">
+        <div class="container">
+            <div class="card readMeCard p-5">
+                <h3 class="mb-3">Tableau User Story | Sleep Disorders Analysis</h3>
+
+                <h4>Introduction</h4>
+                <p>This user story outlines the requirements for developing two Tableau dashboards aimed at visualizing
+                    and
+                    analyzing the factors contributing to sleep disorders and providing details about individuals
+                    affected
+                    by these conditions.</p>
+
+                <h4 class="my-2">Tableau Public Link</h4>
+                <p><a href="https://public.tableau.com/views/SleepDisorderAnalysis/SleepDisorderDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+                        target="_blank">Link to Tableau Dashboard</a></p>
+
+                <h4 class="my-2 mb-3">Sleep Disorder Analysis Summary Dashboard | Requirements</h4>
+
+                <h5 class="my-2">Dashboard Purpose</h5>
+                <p>Provide an overview showing the average sleep hours for each sleep disorder type and the
+                    corresponding
+                    average sleep quality.</p>
+
+                <h5 class="my-2">Sleep Disorder Overview</h5>
+                <p>Display an overview including how many average sleep hours each individual sleep type is taking and
+                    how
+                    much average quality of sleep they get.</p>
+
+                <h5 class="my-2">Analyzing Factors Contributing to Sleep Disorders</h5>
+                <ol>
+                    <li>Show the relationship between sleep disorders and average sleep quality.</li>
+                    <li>Show the relationship between sleep disorders and average sleep duration (hours).</li>
+                    <li>Visualize the relationship between sleep disorders and average heart rate.</li>
+                    <li>Visualize the relationship between sleep disorders and average stress level.</li>
+                    <li>Visualize the relationship between BMI categories and the number of individuals with each sleep
+                        disorder.</li>
+                    <li>Explore the correlation between gender and sleep disorders.</li>
+                    <li>Display the relationship between sleep disorders and age group.</li>
+                </ol>
+
+                <h5 class="my-2">Investigating Factors Influencing Sleep Quality</h5>
+                <ol>
+                    <li>Examine the relationship between sleep quality and age through visualization.</li>
+                    <li>Visualize the correlation between sleep quality and heart rate.</li>
+                    <li>Explore the connection between sleep quality and sleep duration.</li>
+                    <li>Display a chart that illustrates the link between sleep quality and stress level.</li>
+                </ol>
+
+                <h4 class="my-2 mb-3">Sleep Disorder Individual Details Dashboard | Requirements</h4>
+
+                <h5 class="my-2">Dashboard Purpose</h5>
+                <p>The purpose of this dashboard is to provide detailed information about individuals affected by
+                    various
+                    factors.</p>
+                <h4 class="my-2 mb-3">Sleep Disorder Analysis Summary</h4>
+                <p>
+                    The Sleep Disorder Analysis dashboard presents insights into sleep patterns based on three primary
+                    categories: no
+                    disorder, sleep apnea, and insomnia. On average, individuals without sleep disorders sleep the
+                    longest at 7.36 hours,
+                    followed by those with sleep apnea at 7.03 hours, and insomnia sufferers at 6.59 hours. Sleep
+                    quality is highest for
+                    individuals without disorders, rated at 7.63, while those with sleep apnea and insomnia have lower
+                    ratings of 7.21 and
+                    6.53, respectively. The analysis further explores sleep disorders based on BMI, stress levels, age
+                    groups, gender, and
+                    heart rates. Key findings reveal that individuals with obesity and higher stress levels are more
+                    likely to experience
+                    sleep apnea and insomnia, whereas lower stress levels and normal BMI are associated with no sleep
+                    disorders. Moreover,
+                    males are slightly more prone to sleep apnea, while females experience higher rates of insomnia.
+                    Heart rate analysis
+                    shows a higher average heart rate for individuals with sleep disorders compared to those without.
+                </p>
+                <h4 class="my-2 mb-3">Recommendations</h4>
+                <p>
+                    To improve sleep quality and mitigate sleep disorders, interventions targeting stress reduction and
+                    heart health may
+                    prove beneficial. Promoting a healthy BMI through diet and exercise could also reduce the prevalence
+                    of sleep apnea and
+                    insomnia. Tailored sleep hygiene programs, especially for females and individuals in older age
+                    groups who tend to report
+                    more sleep issues, could help improve sleep duration and quality. Finally, further studies to
+                    investigate the
+                    relationship between stress management techniques and sleep improvement are recommended, as this
+                    factor appears to
+                    significantly impact sleep quality and disorder prevalence.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script type='text/javascript'>
+        var divElement = document.getElementById('viz1725727398726');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+
+        // Set width and height to fit container
+        vizElement.style.width = '100%';
+        vizElement.style.height = '800px'; // Adjust this based on the aspect ratio of your viz
+
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+
+
+
+    <!-- Footer -->
+    <div class="footer mt-5">
+        <p class="text-center">Copyright © 2024 Kaung Si Thu - All rights reserved.</p>
+    </div>
+    <!-- Bootstrap JS CDN -->
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script> -->
+
+    <!-- JS -->
+    <script src="../../script.js"></script>
+</body>
+
+</html>

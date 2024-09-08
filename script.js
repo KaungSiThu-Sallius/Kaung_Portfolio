@@ -5,7 +5,7 @@ window.addEventListener('scroll', function () {
     let currentSection = '';
 
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100; // Adjust offset as needed
+        const sectionTop = section.offsetTop - 100;
         if (pageYOffset >= sectionTop) {
             currentSection = section.getAttribute('id');
         }
@@ -25,17 +25,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const paginationContainer = document.querySelector('.pagination');
     const pageNumbersContainer = document.querySelector('.page-numbers');
 
-    // Sample projects with placeholder images, titles, and fake detail URLs
     let allProjects = [
-        { title: 'E-Commerce Sales Analysis (Excel)', category: 'excel', imgSrc: 'https://via.placeholder.com/200x150.png?text=Excel+Project+1', detailPage: 'project-ecommerce-excel.html' },
-        { title: 'Bike Sharing Analysis (Python)', category: 'python', imgSrc: 'https://via.placeholder.com/200x150.png?text=Python+Project+1', detailPage: 'project-bike-python.html' },
+        { title: 'Employee Turnover (Tableau)', category: 'tableau', imgSrc: 'images/employee_turnover.png', detailPage: 'project_details/Tableau/employee_turnover.html' },
+        { title: 'Sleep Disorder (Tableau)', category: 'tableau', imgSrc: 'images/sleep_disorder.png', detailPage: 'project_details/Tableau/sleep_disorder.html' },
         { title: 'CO2 Emissions Analysis (Tableau)', category: 'tableau', imgSrc: 'https://via.placeholder.com/200x150.png?text=Tableau+Project+1', detailPage: 'project-co2-tableau.html' },
         { title: 'Movie Ratings Analysis (R)', category: 'r', imgSrc: 'https://via.placeholder.com/200x150.png?text=R+Project+1', detailPage: 'project-movies-r.html' },
         { title: 'Financial Forecasting (Excel)', category: 'excel', imgSrc: 'https://via.placeholder.com/200x150.png?text=Excel+Project+2', detailPage: 'project-forecasting-excel.html' },
         { title: 'Customer Segmentation (Python)', category: 'python', imgSrc: 'https://via.placeholder.com/200x150.png?text=Python+Project+2', detailPage: 'project-segmentation-python.html' },
         { title: 'Sales Dashboard (Tableau)', category: 'tableau', imgSrc: 'https://via.placeholder.com/200x150.png?text=Tableau+Project+2', detailPage: 'project-sales-tableau.html' },
         { title: 'Social Media Analytics (R)', category: 'r', imgSrc: 'https://via.placeholder.com/200x150.png?text=R+Project+2', detailPage: 'project-socialmedia-r.html' },
-        // Add more projects as needed
+
     ];
 
     let projectsPerPage = 4;

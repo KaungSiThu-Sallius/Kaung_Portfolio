@@ -288,6 +288,11 @@ h5 {
   line-height: 45px;
 }
 
+.portfolio a {
+  text-decoration: none !important;
+  color: var(--text02);
+}
+
 /* ---------------------------------- Contact ----------------------------------  */
 .contact {
   background-image: url("images/circles.png");
@@ -447,4 +452,20 @@ h5 {
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
+}
+
+/* ---------------------------------- Project Details ----------------------------------  */
+.readMeCard {
+  background-color: var(--bg);
+}
+.readMeCard h1,
+h2,
+h3,
+h4,
+h5 {
+  color: var(--text01);
+}
+
+.readMeCard p {
+  color: var(--text02);
 }
