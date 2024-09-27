@@ -28,13 +28,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let allProjects = [
         { title: 'Employee Turnover (Tableau)', category: 'tableau', imgSrc: 'images/employee_turnover.png', detailPage: 'project_details/Tableau/employee_turnover.html' },
         { title: 'Sleep Disorder (Tableau)', category: 'tableau', imgSrc: 'images/sleep_disorder.png', detailPage: 'project_details/Tableau/sleep_disorder.html' },
-        { title: 'CO2 Emissions Analysis (Tableau)', category: 'tableau', imgSrc: 'https://via.placeholder.com/200x150.png?text=Tableau+Project+1', detailPage: 'project-co2-tableau.html' },
-        { title: 'Movie Ratings Analysis (R)', category: 'r', imgSrc: 'https://via.placeholder.com/200x150.png?text=R+Project+1', detailPage: 'project-movies-r.html' },
-        { title: 'Financial Forecasting (Excel)', category: 'excel', imgSrc: 'https://via.placeholder.com/200x150.png?text=Excel+Project+2', detailPage: 'project-forecasting-excel.html' },
-        { title: 'Customer Segmentation (Python)', category: 'python', imgSrc: 'https://via.placeholder.com/200x150.png?text=Python+Project+2', detailPage: 'project-segmentation-python.html' },
-        { title: 'Sales Dashboard (Tableau)', category: 'tableau', imgSrc: 'https://via.placeholder.com/200x150.png?text=Tableau+Project+2', detailPage: 'project-sales-tableau.html' },
-        { title: 'Social Media Analytics (R)', category: 'r', imgSrc: 'https://via.placeholder.com/200x150.png?text=R+Project+2', detailPage: 'project-socialmedia-r.html' },
-
+        { title: 'E-Commerce Sales (Excel)', category: 'excel', imgSrc: 'images/e_commerce.png', detailPage: 'project_details/Excel/e_commerce.html' },
+        { title: 'Customer Churn (Excel)', category: 'excel', imgSrc: 'images/customer_churn.png', detailPage: 'project_details/Excel/customer_churn.html' },
+        { title: 'Video Games Sales (SQL)', category: 'sql', imgSrc: 'https://via.placeholder.com/200x150.png?text=Video Games Analysis', detailPage: 'project_details/SQL/video_game_sales.html' },
+        { title: 'Flight Delays (SQL)', category: 'sql', imgSrc: 'https://via.placeholder.com/200x150.png?text=Flight Delay Analysis', detailPage: 'project_details/SQL/flight_delay.html' }
     ];
 
     let projectsPerPage = 4;

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel - Customer Churn Analysis</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="../../bootstrap/bootstrap.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+
+    <!-- Pace.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Loader CSS -->
+    <link rel="stylesheet" href="../../loader.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles.css">
+
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand d-lg-none" href="/">
+                <img src="../../images/LOGO.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item active-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html#about">About Me</a>
+                    </li>
+                    <a class="navbar-brand d-none d-lg-block" href="/">
+                        <img src="../../images/LOGO.png" alt="Logo">
+                    </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html#contact">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="readme mt-5">
+        <div class="container">
+            <div class="card readMeCard p-5">
+                <h2 class="mb-3">Internet Service Customer Churn Analysis (Excel)</h2>
+
+                <p>In this analysis, we explore the Customer Churn dataset to understand the factors that lead to
+                    customers
+                    discontinuing their internet service. We also offer recommendations on how to reduce churn and
+                    retain customers.</p>
+
+                <ol>
+                    <li>
+                        <p class="mb-0">Is the difference in LTV between churned and non-churned customers statistically
+                            significant?</p>
+                        <p>Determine how much impact the company can have due to churned customers.</p>
+                    </li>
+                    <li>
+                        <p class="mb-0">Is Subscription Type correlated with customer churn?</p>
+                        <p>Determining which subscription type is more likely to result in customer churn.</p>
+                    </li>
+                    <li>
+                        <p class="mb-0">Which Contract Length leads to higher customer churn?</p>
+                        <p>Identifying the contract length that has the highest rate of customer churn.</p>
+                    </li>
+                    <li>
+                        <p class="mb-0">Is payment delay related to customer churn?</p>
+                        <p>Analyzing the relationship between payment delays and customer churn.</p>
+                    </li>
+                    <li>
+                        <p class="mb-0">Is there any correlation between Gender, Age, and Customer Churn?</p>
+                        <p>Identifying the correlation between gender, age, and customer churn.</p>
+                    </li>
+                    <li>
+                        <p class="mb-0">Which Tenure category is more likely to result in customer churn?</p>
+                        <p>Identifying the tenure category that is most likely to experience customer churn.</p>
+                    </li>
+                </ol>
+                <p><b>Excel Source File: </b><a href="https://1drv.ms/x/s!Aqk_KKAyimQTglhv0_eaNfe_2fuK?e=kxXfvl"
+                        target="_blank">Go to
+                        Excel</a></p>
+                <p><b>Dataset Source:</b> <a
+                        href="https://www.kaggle.com/datasets/muhammadshahidazeem/customer-churn-dataset/data"
+                        target="_blank">Customer Churn Dataset</a></p>
+
+                <h3 class="my-3">Final Dashboard</h3>
+                <img alt="Screenshot 2024-07-31 at 2 18 45 PM" src="../../images/customer_churn.png">
+
+                <h3 class="my-2 mt-4">Cleaning the Dataset</h3>
+                <h5 class="my-2">Step 1: Understand the Dataset</h5>
+
+                <p>The dataset contains 64,374 records of customer-related data. There are 11 columns of data:</p>
+
+                <ol>
+                    <li>
+                        <p class="mb-0"><b>CustomerID</b>: A unique identifier for each customer.</p>
+                    </li>
+                    <li>
+                        <p class="mb-0"><b>Age</b>: The age of the customer.</p>
+                    </li>
+                    <li>
+                        <p class="mb-0"><b>Gender</b>: The gender of the customer (e.g., Male, Female).</p>
+                    </li>
+                    <li>
+                        <p class="mb-0"><b>Tenure</b>: The length of time (in months) that the customer has been using
+                            the service.
+                        </p>
+                    </li>
+                    <li>
+                        <p class="mb-0"><b>Support Calls</b>: The number of times the customer has contacted customer
+                            support.</p>
+                    </li>
+                    <li>
+                        <p class="mb-0"><b>Payment Delay</b>: Indicates how frequently the customer has delayed
+                            payments.</p>
+                    </li>
+                    <li>
+                        <p class="mb-0"><b>Subscription Type</b>: The type of subscription the customer has chosen
+                            (e.g., Basic,
+                            Standard, Premium).</p>
+                    </li>
+                    <li>
+                        <p class="mb-0"><b>Contract Length</b>: The duration of the contract (e.g., 1 year, 2 years).
+                        </p>
+                    </li>
+                    <li>
+                        <p class="mb-0" <b>Total Spend</b>: The total amount of money the customer has spent on the
+                            service.</p>
+                    </li>
+                    <li>
+                        <p class="mb-0"><b>Last Interaction</b>: The last time the customer interacted with the service
+                            or company.
+                        </p>
+                    </li>
+                    <li>
+                        <p class="mb-0"><b>Churn</b>: Indicates if the customer has stopped using the service ("1" for
+                            churned, "0"
+                            for active).</p>
+                    </li>
+
+                </ol>
+
+                <p>I first converted the cells into a table using <kbd>Cmd</kbd> + <kbd>T</kbd> in Excel.</p>
+
+                <h5 class="my-2">Step 2: Check for Duplicates</h5>
+
+                <p>After understanding the dataset, I checked for duplicates using Excel's built-in "Remove Duplicates"
+                    function.</p>
+
+                <h5 class="my-2">Step 3: Check for Blank or Irregular Values</h5>
+
+                <p>Using conditional formatting, I highlighted and removed any blank rows.</p>
+
+                <h3>Preparing the Dataset</h3>
+                <h5 class="my-2">Creating New Columns</h5>
+
+                <p>I added a "Total Count" column filled with the value 1, to calculate the churn rate in a pivot table.
+                    I also created
+                    an "Age Categories" column by grouping ages into "Adolescents," "Middle-aged," and "Seniors." Next,
+                    I converted the
+                    "Tenure" column into "Tenure in Years" and categorized the "Payment Delay" column into "Long Delay"
+                    and "Short
+                    Delay."</p>
+
+                <h5>Changing Data Type</h5>
+
+                <p>I changed the "Total Spend" column's data type from General to Currency (Dollar).</p>
+
+                <h3>Define Metrics for the Dashboard</h3>
+
+                <p>We created the following pivot tables to answer key business questions:</p>
+
+                <h5>Metric 1: Lifetime Value of Churned and Non-Churned Customers</h5>
+                <p class="mb-0"><b>Values:</b> CustomerID (By Count), Total Spend (By Sum), Tenure (Average)</p>
+                <p><b>Rows:</b> Churn</p>
+
+                <h5>Metric 2: Churn Rate by Subscription Type</h5>
+                <p><b>Values:</b> Churn Rate</p>
+                <p><b>Rows:</b> Subscription Type</p>
+
+                <h5>Metric 3: Number of Churns by Contract Length</h5>
+                <p class="mb-0"><b>Values:</b> Churn</p>
+                <p><b>Rows:</b> Contract Length</p>
+
+                <h5>Metric 4: Churn Rate by Payment Delay</h5>
+                <p class="mb-0"><b>Values:</b> Churn Rate</p>
+                <p><b>Rows:</b> Payment Delay Category</p>
+
+                <h5>Metric 5: Number of Churns by Age Group and Gender</h5>
+                <p class="mb-0"><b>Values:</b> Churn</p>
+                <p class="mb-0"><b>Rows:</b> Age Category</p>
+                <p><b>Columns:</b> Gender</p>
+
+                <h5>Metric 6: Number of Churns by Tenure (Year)</h5>
+                <p class="mb-0"><b>Values:</b> Churn</p>
+                <p><b>Rows:</b> Tenure</p>
+
+                <h3>Creating Charts for Metrics</h3>
+
+                <h5 class="my-2">Metric 2: Churn Rate by Subscription Type</h5>
+                <p>Created a <b>Doughnut Chart</b> for Subscription Type.</p>
+                <img width="417" alt="Screenshot 2024-08-01 at 8 21 46 PM"
+                    src="https://github.com/user-attachments/assets/4f2867d7-24f9-4bb0-9bd6-ae15dbb3d3c7">
+
+                <h5 class="mt-4 mb-2">Metric 3: Number of Churns by Contract Length</h5>
+                <p>Created a <b>Bar Chart</b> with Contract Length on the x-axis and Number of Churns on the y-axis.</p>
+                <img width="480" alt="Screenshot 2024-08-01 at 8 28 23 PM"
+                    src="https://github.com/user-attachments/assets/bc5174b5-ef8f-48c2-bf98-02878e7737c6">
+
+                <h5 class="mt-4 mb-2">Metric 4: Churn Rate by Payment Delay</h5>
+                <p>Created a <b>Pie Chart</b> for Payment Delay categories.</p>
+                <img width="417" alt="Screenshot 2024-08-01 at 8 22 02 PM"
+                    src="https://github.com/user-attachments/assets/642e2c6a-ea44-4233-8d60-428677aa4c82">
+
+                <h5 class="mt-4 mb-2">Metric 5: Number of Churns by Age Group and Gender</h5>
+                <p>Created a <b>Line Chart</b> with Age Group on the x-axis and Number of Churns on the y-axis.</p>
+                <img width="480" alt="Screenshot 2024-08-01 at 8 29 34 PM"
+                    src="https://github.com/user-attachments/assets/db6c1033-871c-4311-a59e-0200f08ae102">
+
+                <h5 class="mt-4 mb-2">Metric 6: Number of Churns by Tenure (Year)</h5>
+                <p>Created a <b>Line Chart</b> with Tenure (Year) on the x-axis and Number of Churns on the y-axis.</p>
+                <img width="480" alt="Screenshot 2024-08-01 at 8 30 39 PM"
+                    src="https://github.com/user-attachments/assets/ac97246e-dcef-4a2b-8424-9bad39c500f3">
+
+                <h3 class="mt-4 mb-2">Creating Slicer</h3>
+
+                <p>Created slicers to filter data and gain additional insights.</p>
+
+                <h3>Analysis from the Dashboard</h3>
+
+                <h5>Analysis 1: Lifetime Value of Churned and Non-Churned Customers</h5>
+                <p>Churned customers have significantly higher LTV than non-churned customers, indicating a need to
+                    focus on retaining
+                    high-value customers.</p>
+
+                <h5>Analysis 2: Churn Rate by Subscription Type</h5>
+                <p>There is no significant relationship between subscription type and customer churn.</p>
+
+                <h5>Analysis 3: Number of Churns by Contract Length</h5>
+                <p>Monthly contracts have the highest churn rate, while quarterly contracts have the lowest.</p>
+
+                <h5>Analysis 4: Churn Rate by Payment Delay</h5>
+                <p>Customers with longer payment delays are 88% more likely to churn.</p>
+
+                <h5>Analysis 5: Number of Churns by Age Group and Gender</h5>
+                <p>Senior customers are more likely to churn. Marketing efforts should target female customers to reduce
+                    churn.</p>
+
+                <h3>Analysis 6: Number of Churns by Tenure (Year)</h3>
+                <p>Customers with tenures of 3-4 years are more likely to churn. Companies should focus on retaining
+                    customers who have
+                    been with them for 3-4 years.</p>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer mt-5">
+        <p class="text-center">Copyright © 2024 Kaung Si Thu - All rights reserved.</p>
+    </div>
+    <!-- Bootstrap JS CDN -->
+    <script src="../../bootstrap/bootstrap.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script> -->
+
+    <!-- JS -->
+    <script src="../../script.js"></script>
+</body>
+
+</html>

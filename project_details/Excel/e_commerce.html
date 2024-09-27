@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel - E-Commerce Sales Analysis</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="../../bootstrap/bootstrap.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+
+    <!-- Pace.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Loader CSS -->
+    <link rel="stylesheet" href="../../loader.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles.css">
+
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand d-lg-none" href="/">
+                <img src="../../images/LOGO.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item active-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html#about">About Me</a>
+                    </li>
+                    <a class="navbar-brand d-none d-lg-block" href="/">
+                        <img src="../../images/LOGO.png" alt="Logo">
+                    </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html#contact">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="readme mt-5">
+        <div class="container">
+            <div class="card readMeCard p-5">
+                <h2 class="mb-3">E-Commerce Sales Analysis (Excel)</h2>
+                <p>In this analysis, we will examine key aspects of e-commerce sales data to uncover insights and trends
+                    that can inform
+                    business strategies and decision-making. The specific questions addressed in this analysis include:
+                </p>
+
+                <ol>
+                    <li>
+                        <p class="mb-0">What are the top 5 best-selling products?</p>
+                        <p>Identifying the top 5 products with the highest total sales.</p>
+                    </li>
+                    <li>
+                        <p class="mb-0">In what month do specific products experience low sales?</p>
+                        <p>Analyzing monthly sales trends to pinpoint periods of low sales for different products.</p>
+                    </li>
+                    <li>
+                        <p class="mb-0">In what months do specific categories experience the highest and lowest sales?
+                        </p>
+                        <p>Analyzing monthly sales trends to pinpoint periods of both highest and lowest sales for
+                            different categories.
+                        </p>
+                    </li>
+                    <li>
+                        <p class="mb-0">Which states have the highest and lowest sales?</p>
+                        <p>Assessing state-wise sales performance to identify geographic trends and opportunities.</p>
+                    </li>
+                    <li>
+                        <p class="mb-0">Which brand is the most popular?</p>
+                        <p>Evaluating brand popularity by analyzing sales data across different brands.</p>
+                    </li>
+                </ol>
+                <p><b>Excel Source File: </b><a href="https://1drv.ms/x/s!Aqk_KKAyimQTglajVzvwPjbnNGT_?e=DKP1hy"
+                        target="_blank">Go to
+                        Excel</a></p>
+                <p><b>Dataset Source: </b><a
+                        href=" https://www.kaggle.com/datasets/ayushparwal2026/online-ecommerce/data"
+                        target="_blank">Kaggle E-commerce Dataset</a></p>
+
+                <h3 class="my-3">Final Dashboard</h3>
+                <img alt="Screenshot 2024-07-31 at 2 18 45 PM" src="../../images/e_commerce.png">
+
+                <h3 class="my-2 mt-4">Cleaning the dataset</h3>
+                <h5 class="my-2">Step 1: Understand the dataset</h5>
+                <p>The dataset contains 5096 records of sales transactions between 11/01/2020 - 31/12/2022. <br>There
+                    are 14 columns of
+                    data as below:</p>
+
+                <ol>
+                    <ul>
+                        <li>
+                            <p class="mb-0"><b>Order_Number</b>: Unique identifier for each order.</p>
+                        </li>
+                        <li>
+                            <p class="mb-0"><b>State_Code</b>: The code representing the state where the order was
+                                placed.</p>
+                        </li>
+                        <li>
+                            <p class="mb-0"><b>Customer_Name</b>: The name of the customer who placed the order.</p>
+                        </li>
+                        <li>
+                            <p class="mb-0"><b>Order_Date</b>: The date when the order was placed.</p>
+                        </li>
+                        <li>
+                            <p class="mb-0"><b>Status</b>: The current status of the order (e.g., Order, Processing,
+                                Shipped,
+                                Delivered).</p>
+                        </li>
+                        <li>
+                            <p class="mb-0"><b>Product</b>: The name or identifier of the product sold.</p>
+                        </li>
+                        <li>
+                            <p class="mb-0"><b>Category</b>: The category to which the product belongs.</p>
+                        </li>
+                        <li>
+                            <p class="mb-0"><b>Brand</b>: The brand of the product.</p>
+                        </li>
+                        <li>
+                            <p class="mb-0"><b>Cost</b>: The cost incurred by the business to acquire or produce the
+                                product.</p>
+                        </li>
+                        <li>
+                            <p class="mb-0"><b>Sales</b>: The revenue earned from selling the product.</p>
+                        </li>
+                        <li>
+                            <p class="mb-0"><b>Quantity</b>: The number of units sold in the order.</p>
+                        </li>
+                        <li>
+                            <p class="mb-0"><b>Total_Cost</b>: The total cost for the quantity sold (Cost * Quantity).
+                            </p>
+                        </li>
+                        <li>
+                            <p class="mb-0"><b>Total_Sales</b>: The total revenue for the quantity sold (Sales *
+                                Quantity).</p>
+                        </li>
+                        <li>
+                            <p class="mb-0"><b>Assigned Supervisor</b>: The supervisor responsible for the order.</p>
+                        </li>
+                    </ul>
+
+                </ol>
+
+                <p>Firstly, I converted the cells into a table by using <kbd>Cmd</kbd> + <kbd>T</kbd> in Excel.</p>
+
+                <h5 class="my-2">Step 2: Check for Duplicate Records</h5>
+                <p>After understanding the dataset, I check for any duplicates using Excel's built-in functionality,
+                    "Remove
+                    Duplicates".</p>
+
+                <h5 class="my-2">Step 3: Check for Any Blanks or Irregular Values in Records</h5>
+                <p>Using conditional formatting, I highlighted blank cells. Since the highlighted rows were all empty, I
+                    deleted them. I
+                    didn't find any blank cells or irregular values.</p>
+
+                <h3>Preparing the dataset</h3>
+                <h5 class="my-2">Creating new columns</h5>
+                <p>I extracted the unique state codes from the State_Code column using the UNIQUE formula. Then, I
+                    created a new sheet
+                    to map state codes to state names. Using <b>VLOOKUP</b>, I added a new column called State_Name.</p>
+
+                <p>Next, I created a new column called Month using the <b>TEXT</b> formula on the Order_Date column. I
+                    also created a
+                    new column called Profit by subtracting the Total Cost from the Total Sales.</p>
+
+                <h3>Define Metrics for Dashboard</h3>
+                <p>We created the following pivot tables to answer our business questions:</p>
+
+                <h5>Metric 1: Total Sales</h5>
+                <p><b>Values:</b> Total Sales (By Sum)</p>
+
+                <h5>Metric 2: Total Profit</h5>
+                <p><b>Values:</b> Profit (By Sum)</p>
+
+                <h5>Metric 3: Top 5 Best Selling Products by Total Sales</h5>
+                <p class="mb-0"><b>Values:</b> Total Sales (By Sum)</p>
+                <p class="mb-0"><b>Rows:</b> Product</p>
+                <p><b>Filter:</b> Top 5 Products</p>
+
+                <h5>Metric 4: Best Selling Categories by Count</h5>
+                <p class="mb-0"><b>Values:</b> Quantity (By Sum)</p>
+                <p><b>Rows:</b> Category</p>
+
+                <h5>Metric 5: Monthly Total Sales by Category</h5>
+                <p class="mb-0"><b>Values:</b> Total Sales (By Sum)</p>
+                <p class="mb-0"><b>Rows:</b> Month</p>
+                <p><b>Columns:</b> Category</p>
+
+                <h5>Metric 6: Total Sales by States</h5>
+                <p class="mb-0"><b>Values:</b> Total Sales (By Sum)</p>
+                <p><b>Rows:</b> State_Name</p>
+
+                <h5>Metric 7: Total Sales Percentage by Brand</h5>
+                <p class="mb-0"><b>Values:</b> Total Sales (By Sum)</p>
+                <p><b>Rows:</b> Brand</p>
+
+                <h5>Metric 8: Top 5 Most Profitable Products</h5>
+                <p class="mb-0"><b>Values:</b> Profit (By Sum)</p>
+                <p><b>Rows:</b> Product</p>
+
+                <h3>Creating Charts for Certain Metrics</h3>
+                <h5 class="my-2">For Metric 3: Top 5 Best Selling Products by Total Sales</h5>
+                <p>I created a <b>Bar Chart</b> with Products on the x-axis and Total Sales on the y-axis.</p>
+                <img src="https://github.com/user-attachments/assets/79dd3f52-2844-4cbf-b18e-3b5c355773dc" width="600px"
+                    alt="Top 5 Best Selling Products">
+
+                <h5 class="mt-4 mb-2">For Metric 4: Best Selling Categories by Count</h5>
+                <p>Another <b>Bar Chart</b> with Categories on the x-axis and Counts on the y-axis.</p>
+                <img src="https://github.com/user-attachments/assets/c109a486-3c93-4ea7-9fc4-6e80d32223e2" width="600px"
+                    alt="Best Selling Categories">
+
+                <h5 class="mt-4 mb-2">For Metric 5: Monthly Total Sales by Category</h5>
+                <p>A <b>Line Chart</b> with Months on the x-axis and Total Sales on the y-axis.</p>
+                <img src="https://github.com/user-attachments/assets/8ae92b99-45e3-471e-adcb-60c2cec9333d" width="600px"
+                    alt="Monthly Sales by Category">
+
+                <h5 class="mt-4 mb-2">For Metric 6: Total Sales by States</h5>
+                <p>A <b>Line Chart</b> with States on the x-axis and Total Sales on the y-axis.</p>
+                <img src="https://github.com/user-attachments/assets/260edff2-42fd-48be-8d05-959bf6c17443" width="600px"
+                    alt="Total Sales by States">
+
+                <h5 class="mt-4 mb-2">For Metric 7: Total Sales Percentage by Brand</h5>
+                <p>A <b>Pie Chart</b> showing the percentage of Total Sales by Brand.</p>
+                <img src="https://github.com/user-attachments/assets/498e5191-5a0e-4b37-a495-f2fce1d0c3ac" width="400px"
+                    alt="Sales Percentage by Brand">
+
+                <h3 class="mt-4 mb-2">Creating Slicer and Timeline</h3>
+                <p>I created a slicer and timeline to manipulate the data shown in charts. By using these tools, we can
+                    gain different
+                    insights through filtering.</p>
+
+                <h3>Analysis From Dashboard</h3>
+                <p>By analyzing the dashboard, we can get an overview of the sales performance across different
+                    products, categories,
+                    and states. Observing these performances allows us to provide recommendations that will improve
+                    overall sales for
+                    the e-commerce website.</p>
+
+                <h5>Analysis 1: Need to Restock Inventory Between March and May and in September</h5>
+                <p>Sales across all product categories tend to increase between March and May, and again in September.
+                    It's important to
+                    ensure inventory levels are sufficient during these peak periods to meet the higher demand.</p>
+
+                <h5>Analysis 2: Increase Marketing Efforts in July and August</h5>
+                <p>Sales across all product categories tend to decrease in July and August. We need to run more
+                    marketing campaigns
+                    during these months, especially for the top-selling products: monitors, CPUs, and graphics cards.
+                </p>
+
+                <h5>Analysis 3: Lowest and Highest Sales States</h5>
+                <p>The chart shows that Andaman and Nicobar Islands have the lowest sales, while Maharashtra has the
+                    highest. Most
+                    states have consistent sales, with Gujarat and Uttar Pradesh having the second-highest sales. We
+                    should consider
+                    conducting surveys to analyze the reasons for low sales in Andaman and Nicobar Islands. For
+                    high-performing states,
+                    ensure sufficient stock to meet the high demand.</p>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <div class="footer mt-5">
+        <p class="text-center">Copyright © 2024 Kaung Si Thu - All rights reserved.</p>
+    </div>
+    <!-- Bootstrap JS CDN -->
+    <script src="../../bootstrap/bootstrap.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script> -->
+
+    <!-- JS -->
+    <script src="../../script.js"></script>
+</body>
+
+</html>
