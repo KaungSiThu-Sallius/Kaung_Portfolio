@@ -31,7 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
         { title: 'E-Commerce Sales (Excel)', category: 'excel', imgSrc: 'images/e_commerce.png', detailPage: 'project_details/Excel/e_commerce.html' },
         { title: 'Customer Churn (Excel)', category: 'excel', imgSrc: 'images/customer_churn.png', detailPage: 'project_details/Excel/customer_churn.html' },
         { title: 'Video Games Sales (SQL)', category: 'sql', imgSrc: 'https://via.placeholder.com/200x150.png?text=Video Games Analysis', detailPage: 'project_details/SQL/video_game_sales.html' },
-        { title: 'Flight Delays (SQL)', category: 'sql', imgSrc: 'https://via.placeholder.com/200x150.png?text=Flight Delay Analysis', detailPage: 'project_details/SQL/flight_delay.html' }
+        { title: 'Flight Delays (SQL)', category: 'sql', imgSrc: 'https://via.placeholder.com/200x150.png?text=Flight Delay Analysis', detailPage: 'project_details/SQL/flight_delay.html' },
+        { title: 'Netflix Shows Analysis (Python)', category: 'python', imgSrc: 'images/Netflix logo.png', detailPage: 'project_details/Python/Netflix Shows Analysis.html' },
+        { title: 'Data Science Jobs Analysis (Python)', category: 'python', imgSrc: 'images/DS logo.png', detailPage: 'project_details/Python/DS Job Analysis.html' }
+
     ];
 
     let projectsPerPage = 4;
@@ -113,6 +116,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Set the "All Projects" button as active on load
     document.querySelector('.filter-btn[data-filter="all"]').classList.add('active');
+
+
 });
 
 

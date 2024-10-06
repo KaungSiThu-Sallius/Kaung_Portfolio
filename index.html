@@ -203,7 +203,7 @@
             <h2 class="text-center heading_line">Portfolio <span class="text_shadow">Projects</span></h2>
             <div class="filters mb-4">
                 <button class="filter-btn btn-custom" data-filter="all">All Projects</button>
-                <!-- <button class="filter-btn btn-custom" data-filter="python">Python</button> -->
+                <button class="filter-btn btn-custom" data-filter="python">Python</button>
                 <button class="filter-btn btn-custom" data-filter="tableau">Tableau</button>
                 <!-- <button class="filter-btn btn-custom" data-filter="r">R</button> -->
                 <button class="filter-btn btn-custom" data-filter="sql">SQL</button>
@@ -230,7 +230,7 @@
                 <div class="col-md-6">
                     <div class="card p-4">
                         <h4 class="text-center text_shadow">Get In Touch</h4>
-                        <form>
+                        <form onsubmit="sendEmail(); return false;">
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
                                 <input type="text" class="form-control" id="name" name="name">
@@ -277,7 +277,7 @@
                                 </a>
                             </div>
                             <div class="col-3">
-                                <a href="https://www.tableau.com" target="_blank"
+                                <a href="https://public.tableau.com/app/profile/kaung.si.thu4639/vizzes" target="_blank"
                                     class="d-flex flex-column align-items-center text-decoration-none">
                                     <img src="images/Tableau Software.png" alt="Tableau" class="mb-2">
                                     <span>Tableau</span>
@@ -319,5 +319,27 @@
 
 <!-- JS -->
 <script src="script.js"></script>
+<script>
+    function sendEmail() {
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Check if all fields are filled
+        if (!name || !email || !message) {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        // Construct the mailto link with URL encoding
+        const subject = encodeURIComponent(`Message from ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nMessage: ${message}`);
+        const mailtoLink = `mailto:kaungsithu.sallius@gmail.com?subject=${subject}&body=${body}`;
+
+        // Open the email client
+        window.location.href = mailtoLink;
+    }
+
+</script>
 
 </html>

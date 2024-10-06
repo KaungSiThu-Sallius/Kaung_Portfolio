@@ -254,6 +254,7 @@ h5 {
   height: 150px;
   object-fit: cover;
   border-radius: 5px;
+  border: 1px solid var(--primary01);
 }
 
 .project-title {
