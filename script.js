@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
         { title: 'Sleep Disorder (Tableau)', category: 'tableau', imgSrc: 'images/sleep_disorder.png', detailPage: 'project_details/Tableau/sleep_disorder.html' },
         { title: 'E-Commerce Sales (Excel)', category: 'excel', imgSrc: 'images/e_commerce.png', detailPage: 'project_details/Excel/e_commerce.html' },
         { title: 'Customer Churn (Excel)', category: 'excel', imgSrc: 'images/customer_churn.png', detailPage: 'project_details/Excel/customer_churn.html' },
-        { title: 'Video Games Sales (SQL)', category: 'sql', imgSrc: 'https://via.placeholder.com/200x150.png?text=Video Games Analysis', detailPage: 'project_details/SQL/video_game_sales.html' },
-        { title: 'Flight Delays (SQL)', category: 'sql', imgSrc: 'https://via.placeholder.com/200x150.png?text=Flight Delay Analysis', detailPage: 'project_details/SQL/flight_delay.html' },
+        { title: 'Video Games Sales (SQL)', category: 'sql', imgSrc: 'images/video_game_sales.png', detailPage: 'project_details/SQL/video_game_sales.html' },
+        { title: 'Flight Delays (SQL)', category: 'sql', imgSrc: 'images/flight_delay.png', detailPage: 'project_details/SQL/flight_delay.html' },
         { title: 'Netflix Shows Analysis (Python)', category: 'python', imgSrc: 'images/Netflix logo.png', detailPage: 'project_details/Python/Netflix Shows Analysis.html' },
         { title: 'Data Science Jobs Analysis (Python)', category: 'python', imgSrc: 'images/DS logo.png', detailPage: 'project_details/Python/DS Job Analysis.html' }
 
