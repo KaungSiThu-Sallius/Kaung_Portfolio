@@ -101,7 +101,8 @@
                         <p>Identifying the tenure category that is most likely to experience customer churn.</p>
                     </li>
                 </ol>
-                <p><b>Excel Source File: </b><a href="https://1drv.ms/x/s!Aqk_KKAyimQTglhv0_eaNfe_2fuK?e=kxXfvl"
+                <p><b>Excel Source File: </b><a
+                        href="https://1drv.ms/x/c/13648a32a0283fa9/EVwN2r02wU1FjysQeHMfjP0BzjU0xg2Emi3Kti9rNUcgMw?e=FIyEhY"
                         target="_blank">Go to
                         Excel</a></p>
                 <p><b>Dataset Source:</b> <a
@@ -109,9 +110,9 @@
                         target="_blank">Customer Churn Dataset</a></p>
 
                 <h3 class="my-3">Final Dashboard</h3>
-                <img alt="Screenshot 2024-07-31 at 2 18 45 PM" src="../../images/customer_churn.png">
-
-                <h3 class="my-2 mt-4">Cleaning the Dataset</h3>
+                <img class="mb-3" alt="Screenshot 2024-07-31 at 2 18 45 PM" src="../../images/churn.png">
+                <hr>
+                <h3 class="my-2 mt-3">Cleaning the Dataset</h3>
                 <h5 class="my-2">Step 1: Understand the Dataset</h5>
 
                 <p>The dataset contains 64,374 records of customer-related data. There are 11 columns of data:</p>
@@ -174,9 +175,9 @@
 
                 <h5 class="my-2">Step 3: Check for Blank or Irregular Values</h5>
 
-                <p>Using conditional formatting, I highlighted and removed any blank rows.</p>
-
-                <h3>Preparing the Dataset</h3>
+                <p class="mb-3">Using conditional formatting, I highlighted and removed any blank rows.</p>
+                <hr>
+                <h3 class="mb-3">Preparing the Dataset</h3>
                 <h5 class="my-2">Creating New Columns</h5>
 
                 <p>I added a "Total Count" column filled with the value 1, to calculate the churn rate in a pivot table.
@@ -189,9 +190,9 @@
 
                 <h5>Changing Data Type</h5>
 
-                <p>I changed the "Total Spend" column's data type from General to Currency (Dollar).</p>
-
-                <h3>Define Metrics for the Dashboard</h3>
+                <p class="mb-3">I changed the "Total Spend" column's data type from General to Currency (Dollar).</p>
+                <hr>
+                <h3 class="mb-3">Define Metrics for the Dashboard</h3>
 
                 <p>We created the following pivot tables to answer key business questions:</p>
 
@@ -218,9 +219,9 @@
 
                 <h5>Metric 6: Number of Churns by Tenure (Year)</h5>
                 <p class="mb-0"><b>Values:</b> Churn</p>
-                <p><b>Rows:</b> Tenure</p>
-
-                <h3>Creating Charts for Metrics</h3>
+                <p class="mb-3"><b>Rows:</b> Tenure</p>
+                <hr>
+                <h3 class="mb-3">Creating Charts for Metrics</h3>
 
                 <h5 class="my-2">Metric 2: Churn Rate by Subscription Type</h5>
                 <p>Created a <b>Doughnut Chart</b> for Subscription Type.</p>
@@ -244,14 +245,14 @@
 
                 <h5 class="mt-4 mb-2">Metric 6: Number of Churns by Tenure (Year)</h5>
                 <p>Created a <b>Line Chart</b> with Tenure (Year) on the x-axis and Number of Churns on the y-axis.</p>
-                <img width="480" alt="Screenshot 2024-08-01 at 8 30 39 PM"
+                <img class="mb-3" width="480" alt="Screenshot 2024-08-01 at 8 30 39 PM"
                     src="https://github.com/user-attachments/assets/ac97246e-dcef-4a2b-8424-9bad39c500f3">
+                <hr>
+                <h3 class="mt-3 mb-2">Creating Slicer</h3>
 
-                <h3 class="mt-4 mb-2">Creating Slicer</h3>
-
-                <p>Created slicers to filter data and gain additional insights.</p>
-
-                <h3>Analysis from the Dashboard</h3>
+                <p class="mb-3">Created slicers to filter data and gain additional insights.</p>
+                <hr>
+                <h3 class="mb-3">Analysis from the Dashboard</h3>
 
                 <h5>Analysis 1: Lifetime Value of Churned and Non-Churned Customers</h5>
                 <p>Churned customers have significantly higher LTV than non-churned customers, indicating a need to
@@ -271,7 +272,7 @@
                 <p>Senior customers are more likely to churn. Marketing efforts should target female customers to reduce
                     churn.</p>
 
-                <h3>Analysis 6: Number of Churns by Tenure (Year)</h3>
+                <h5>Analysis 6: Number of Churns by Tenure (Year)</h5>
                 <p>Customers with tenures of 3-4 years are more likely to churn. Companies should focus on retaining
                     customers who have
                     been with them for 3-4 years.</p>
