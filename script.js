@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let allProjects = [
         { title: 'Employee Turnover (Tableau)', category: 'tableau', imgSrc: 'images/employee_turnover.png', detailPage: 'project_details/Tableau/employee_turnover.html' },
         { title: 'Sleep Disorder (Tableau)', category: 'tableau', imgSrc: 'images/sleep_disorder.png', detailPage: 'project_details/Tableau/sleep_disorder.html' },
+        { title: 'Employee Attrition Analysis (Excel)', category: 'excel', imgSrc: 'images/hr_analytics.png', detailPage: 'project_details/Excel/employee_attrition.html' },
         { title: 'E-Commerce Sales (Excel)', category: 'excel', imgSrc: 'images/ecommerce_dashbaord.png', detailPage: 'project_details/Excel/e_commerce.html' },
         { title: 'Customer Churn (Excel)', category: 'excel', imgSrc: 'images/customer_churn.png', detailPage: 'project_details/Excel/customer_churn.html' },
         { title: 'Video Games Sales (SQL)', category: 'sql', imgSrc: 'images/video_game_sales.png', detailPage: 'project_details/SQL/video_game_sales.html' },
