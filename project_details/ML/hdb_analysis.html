@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HDB Resale Price Prediction and Analysis</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="../../bootstrap/bootstrap.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+
+    <!-- Pace.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/pace-js@latest/pace.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pace-js@latest/pace-theme-default.min.css">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Slab:wght@100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- Loader CSS -->
+    <link rel="stylesheet" href="../../loader.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../styles.css">
+
+
+    <style>
+        body {
+            line-height: 28px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #2c3e50;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        blockquote {
+            border-left: 4px solid #ddd;
+            margin: 0;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand d-lg-none" href="/">
+                <img src="../../images/LOGO.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item active-item">
+                        <a class="nav-link active" aria-current="page" href="../../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html#about">About Me</a>
+                    </li>
+                    <a class="navbar-brand d-none d-lg-block" href="/">
+                        <img src="../../images/LOGO.png" alt="Logo">
+                    </a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html#contact">Contact Me</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="readme mt-5">
+        <div class="container">
+            <div class="card readMeCard p-5">
+                <h1 class="mb-3">HDB Resale Price Prediction and Analysis</h1>
+                <p>Github Link: <a href="https://github.com/KaungSiThu-Sallius/HDB-Resale-Prices-Prediction.git">Project
+                        Source File</a></p>
+                <p>Project Link: <a href="https://hdb-resale-prices-prediction.onrender.com/">Interactive Dashboard</a>
+                </p>
+                <h2>Table of Contents</h2>
+                <ol>
+                    <li><a href="#introduction">Introduction</a></li>
+                    <li><a href="#project-goal">Project Goal</a></li>
+                    <li><a href="#dataset">Dataset</a></li>
+                    <li><a href="#methodology">Methodology</a>
+                        <ul>
+                            <li><a href="#a-data-collection--preprocessing">A. Data Collection & Preprocessing</a></li>
+                            <li><a href="#b-exploratory-data-analysis-eda">B. Exploratory Data Analysis (EDA)</a></li>
+                            <li><a href="#c-feature-engineering">C. Feature Engineering</a></li>
+                            <li><a href="#d-model-development--evaluation">D. Model Development & Evaluation</a></li>
+                            <li><a href="#e-error-analysis">E. Error Analysis</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#interactive-dashboard-built-with-plotly-dash">Interactive Dashboard (Built with Plotly
+                            Dash)</a>
+                        <ul>
+                            <li><a href="#a-analysis-page">A. Analysis Page</a></li>
+                            <li><a href="#b-prediction-page">B. Prediction Page</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#project-structure">Project Structure</a></li>
+                    <li><a href="#tools-and-technologies">Tools and Technologies</a></li>
+                    <li><a href="#how-to-run-the-project">How to Run the Project</a></li>
+                    <li><a href="#key-results--findings">Key Results & Findings</a></li>
+                    <li><a href="#future-enhancements">Future Enhancements</a></li>
+                    <li><a href="#author">Author</a></li>
+                </ol>
+
+                <hr>
+
+                <h2 id="introduction">Introduction</h2>
+
+                <p>This project focuses on the prediction of HDB (Housing & Development Board) resale flat prices in
+                    Singapore. HDB
+                    flats constitute the vast majority of housing in Singapore, making their pricing a topic of
+                    significant interest
+                    to residents, potential buyers, and policymakers.</p>
+
+                <p><strong>Motivation:</strong>
+                    The primary motivation behind this project is to apply data science techniques to a real-world
+                    problem that has
+                    a tangible impact on many people. It serves as an opportunity to:</p>
+                <ol>
+                    <li>Demonstrate proficiency in various stages of a data science project, including data collection,
+                        cleaning,
+                        exploratory data analysis, feature engineering, model building, and deployment of an interactive
+                        dashboard.
+                    </li>
+                    <li>Utilize Python and its rich ecosystem of libraries (Pandas, Scikit-learn, XGBoost, Plotly Dash)
+                        to develop
+                        an end-to-end solution.</li>
+                    <li>Create a meaningful project for a data science portfolio, showcasing the ability to derive
+                        insights and
+                        build predictive tools.</li>
+                    <li>Gain a deeper understanding of the Singaporean housing market, particularly the factors
+                        influencing HDB
+                        resale prices.</li>
+                </ol>
+
+                <hr>
+
+                <h2 id="project-goal">Project Goal</h2>
+
+                <p>The main goals of this project are:</p>
+                <ol>
+                    <li>To develop a robust machine learning model capable of accurately predicting the resale prices of
+                        HDB flats
+                        based on various features such as location, flat type, floor area, remaining lease, and
+                        proximity to
+                        amenities.</li>
+                    <li>To create an interactive web-based dashboard that allows users to:
+                        <ul>
+                            <li>Explore historical HDB resale price trends and patterns through various visualizations.
+                            </li>
+                            <li>Obtain price predictions for HDB flats based on user-specified criteria.</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <hr>
+
+                <h2 id="dataset">Dataset</h2>
+
+                <p>The project utilizes several publicly available datasets:</p>
+
+                <ul>
+                    <li><strong>HDB Resale Flat Prices:</strong> Sourced from <a
+                            href="https://data.gov.sg/collections/189/view">data.gov.sg</a>. This includes multiple CSV
+                        files
+                        covering different time periods:
+                        <ul>
+                            <li><code>flat_data( Mar 2012 to Dec 2014).csv</code></li>
+                            <li><code>flat_data(Jan 2015 to Dec 2016).csv</code></li>
+                            <li><code>flat_data(Jan-2017 onwards).csv</code></li>
+                        </ul>
+                    </li>
+                    <li><strong>MRT Station Locations:</strong> A GeoJSON file (<code>MRT.geojson</code>) from <a
+                            href="https://data.gov.sg/dataset/mrt-station-location-geojson">data.gov.sg</a> containing
+                        the
+                        geographical coordinates and names of MRT stations.</li>
+                    <li><strong>Resale Price Index (RPI):</strong> A CSV file (<code>resale_price_index.csv</code>) from
+                        <a href="https://data.gov.sg/dataset/hdb-resale-price-index">data.gov.sg</a> used to adjust
+                        historical
+                        resale prices to a common baseline.
+                    </li>
+                    <li><strong>Geospatial Data for Addresses:</strong> The OneMap API (<a
+                            href="https://www.onemap.gov.sg/apidocs/">OneMap API</a>) was used to fetch latitude and
+                        longitude
+                        coordinates for HDB block addresses. The results of this process are stored in
+                        <code>data/clean_hdb_coordinate_data.csv</code>.
+                    </li>
+                    <li><strong>Singapore Town Boundaries:</strong> A GeoJSON file
+                        (<code>singapore_town_boundaries.json</code>)
+                        used for creating choropleth map visualizations in the dashboard.</li>
+                </ul>
+
+                <p><strong>Key Data Files Generated/Used in the Project:</strong></p>
+                <ul>
+                    <li><code>data/clean_hdb_resale_data.csv</code>: The primary cleaned and merged dataset used for
+                        exploratory
+                        data analysis and model training. It includes features like distance to the nearest MRT and
+                        adjusted resale
+                        prices.</li>
+                    <li><code>data/clean_mrt_data.csv</code>: Processed MRT station data with extracted station names
+                        and
+                        coordinates.</li>
+                    <li><code>data/town_mrt_distances.csv</code>: A derived dataset containing the average distance from
+                        HDB flats
+                        to the nearest MRT station for each town.</li>
+                </ul>
+
+                <hr>
+
+                <h2 id="methodology">Methodology</h2>
+
+                <p>The project followed a structured data science workflow, detailed below:</p>
+
+                <h3 id="a-data-collection--preprocessing">A. Data Collection & Preprocessing</h3>
+
+                <ol>
+                    <li><strong>Loading Data:</strong> The raw HDB resale datasets for different time periods were
+                        loaded using
+                        Pandas.</li>
+                    <li><strong>MRT Data Processing:</strong>
+                        <ul>
+                            <li>MRT station data was loaded from <code>MRT.geojson</code>.</li>
+                            <li>Station names were extracted from the HTML description field using BeautifulSoup.</li>
+                            <li>Latitude and longitude for each station were extracted.</li>
+                            <li>The cleaned MRT data was saved to <code>data/clean_mrt_data.csv</code>.</li>
+                        </ul>
+                    </li>
+                    <li><strong>HDB Data Wrangling:</strong>
+                        <ul>
+                            <li>Date columns were converted to datetime objects.</li>
+                            <li><code>remaining_lease</code> was calculated. For older datasets, it was derived from
+                                <code>lease_commence_date</code> and the transaction year. For newer datasets, it was
+                                parsed from a
+                                string format.
+                            </li>
+                            <li>The three HDB datasets were concatenated into a single DataFrame.</li>
+                            <li>Town names were standardized (e.g., 'KALLANG/WHAMPOA' to 'KALLANG').</li>
+                            <li>Duplicate records were removed.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Fetching HDB Coordinates:</strong>
+                        <ul>
+                            <li>A <code>full_address</code> column was created by combining <code>block</code> and
+                                <code>street_name</code>.
+                            </li>
+                            <li>The OneMap API was used to fetch latitude and longitude for unique addresses. (This step
+                                is
+                                computationally intensive and the results were saved to
+                                <code>data/clean_hdb_coordinate_data.csv</code> to avoid repeated API calls).
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Calculating Distance to Nearest MRT:</strong>
+                        <ul>
+                            <li>Both HDB flat locations and MRT station locations were converted to GeoDataFrames using
+                                GeoPandas.
+                            </li>
+                            <li>Coordinate Reference Systems (CRS) were standardized (first to EPSG:4326, then to
+                                EPSG:3414 for
+                                accurate distance calculation in meters).</li>
+                            <li>The <code>sjoin_nearest</code> function from GeoPandas was used to find the nearest MRT
+                                station for
+                                each HDB flat and calculate the distance in meters, which was then converted to
+                                kilometers
+                                (<code>distance_km</code>).</li>
+                        </ul>
+                    </li>
+                    <li><strong>Adjusting Resale Prices:</strong>
+                        <ul>
+                            <li>The Resale Price Index (RPI) data was loaded and transformed from wide to long format.
+                            </li>
+                            <li>HDB resale prices were adjusted to a common baseline (2024 Q4 RPI) to account for market
+                                inflation/deflation over time. The formula used:
+                                <code>adjusted_resale_price = resale_price * (RPI_baseline / RPI_transaction_quarter)</code>.
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Final Clean Dataset:</strong> The fully processed and enriched dataset was saved as
+                        <code>data/clean_hdb_resale_data.csv</code>.
+                    </li>
+                </ol>
+
+                <h3 id="b-exploratory-data-analysis-eda">B. Exploratory Data Analysis (EDA)</h3>
+
+                <p>EDA was performed to uncover patterns, trends, and relationships within the data. Key visualizations
+                    and analyses
+                    included:</p>
+                <ul>
+                    <li><strong>Price Trends:</strong> Line charts showing the trend of average original and adjusted
+                        resale prices
+                        over time.</li>
+                    <li><strong>Distribution Analysis:</strong> Histograms for <code>adjusted_resale_price</code> and
+                        <code>floor_area_sqm</code>. Bar charts for <code>flat_type</code> and <code>town</code>
+                        distributions.
+                    </li>
+                    <li><strong>Price by Categorical Features:</strong> Box plots and bar charts showing average
+                        <code>adjusted_resale_price</code> by <code>flat_type</code>, <code>town</code>, and
+                        <code>storey_range</code>.
+                    </li>
+                    <li><strong>Correlation Analysis:</strong>
+                        <ul>
+                            <li>Scatter plots to visualize relationships between <code>adjusted_resale_price</code> and
+                                continuous
+                                features like <code>floor_area_sqm</code>, <code>remaining_lease</code>, and
+                                <code>distance_km</code>.
+                            </li>
+                            <li>A heatmap of the correlation matrix for selected numerical features.</li>
+                        </ul>
+                    </li>
+                    <li>The EDA provided insights into how different factors influence HDB resale prices, guiding
+                        feature
+                        engineering and model selection.</li>
+                </ul>
+
+                <h3 id="c-feature-engineering">C. Feature Engineering</h3>
+
+                <p>Based on EDA insights, the following features were engineered for model training:</p>
+                <ol>
+                    <li><strong>Temporal Feature:</strong> <code>month_no</code> (month of the transaction) was
+                        extracted from the
+                        <code>month</code> column.
+                    </li>
+                    <li><strong>Storey Range Conversion:</strong> The <code>storey_range</code> (e.g., '01 TO 03') was
+                        split into
+                        numerical <code>min_storey</code> and <code>max_storey</code>.</li>
+                    <li><strong>Categorical Encoding:</strong> One-hot encoding (<code>pd.get_dummies</code>) was
+                        applied to
+                        categorical features: <code>flat_type</code>, <code>town</code>, and <code>flat_model</code>.
+                        <code>drop_first=True</code> was used to avoid multicollinearity.
+                    </li>
+                    <li><strong>Feature Selection:</strong> Irrelevant or redundant columns were dropped (e.g.,
+                        <code>block</code>,
+                        <code>street_name</code>, <code>lease_commence_date</code>, original <code>resale_price</code>,
+                        geographical
+                        coordinates after distance calculation).
+                    </li>
+                    <li>The target variable was <code>adjusted_resale_price</code>.</li>
+                </ol>
+
+                <h3 id="d-model-development--evaluation">D. Model Development & Evaluation</h3>
+
+                <ol>
+                    <li><strong>Data Splitting:</strong> The dataset was split into training (70%) and testing (30%)
+                        sets using
+                        <code>train_test_split</code> with <code>random_state=123</code>.
+                    </li>
+                    <li><strong>Models Implemented:</strong>
+                        <ul>
+                            <li><strong>Random Forest Regressor:</strong> An ensemble learning method.</li>
+                            <li><strong>Lasso Regression:</strong> A linear model with L1 regularization. Input features
+                                for Lasso
+                                were scaled using <code>StandardScaler</code>.</li>
+                            <li><strong>XGBoost Regressor:</strong> A gradient boosting algorithm known for its
+                                performance.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Hyperparameter Tuning:</strong>
+                        <ul>
+                            <li><strong>Random Forest & XGBoost:</strong> <code>RandomizedSearchCV</code> was used to
+                                find optimal
+                                hyperparameters, optimizing for <code>neg_root_mean_squared_error</code> (Random Forest)
+                                or
+                                <code>neg_mean_absolute_error</code> (XGBoost) with 3-fold cross-validation.
+                            </li>
+                            <li><strong>Lasso Regression:</strong> <code>LassoCV</code> was used to determine the best
+                                <code>alpha</code> (regularization strength).
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Model Training & Saving:</strong> Models were trained on the training data. The trained
+                        models,
+                        including those from <code>RandomizedSearchCV</code>, were saved as <code>.pkl</code> files
+                        using
+                        <code>joblib</code>.
+                    </li>
+                    <li><strong>Evaluation Metrics:</strong>
+                        <ul>
+                            <li><strong>Root Mean Squared Error (RMSE):</strong> Measures the average magnitude of the
+                                errors.</li>
+                            <li><strong>R-squared (R²) Score:</strong> Represents the proportion of the variance in the
+                                dependent
+                                variable that is predictable from the independent variables.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Model Comparison:</strong> The performance of the tuned models (Random Forest, XGBoost,
+                        Lasso) was
+                        compared using bar charts for RMSE and R² scores on both training and testing datasets. The
+                        XGBoost
+                        Regressor generally showed the best performance on the test set.</li>
+                </ol>
+                <img src="../../images/model_comparison.png" alt="Model Comparison">
+
+                <h3 id="e-error-analysis">E. Error Analysis</h3>
+
+                <p>For the selected XGBoost model (after <code>RandomizedSearchCV</code>):</p>
+                <ul>
+                    <li>Test RMSE: Approximately S$28,371</li>
+                    <li>Mean Adjusted Resale Price: Approximately S$487,258</li>
+                    <li><strong>Error Rate:</strong> (Test RMSE / Mean Adjusted Resale Price) * 100 ≈
+                        <strong>5.82%</strong>. This
+                        indicates that the model's predictions may deviate by approximately ±5.82% from the actual
+                        resale price on
+                        average.
+                    </li>
+                </ul>
+
+                <hr>
+
+                <h2 id="interactive-dashboard-built-with-plotly-dash">Interactive Dashboard (Built with Plotly Dash)
+                </h2>
+
+                <p>An interactive dashboard was developed using Plotly Dash and Dash Bootstrap Components to visualize
+                    the analysis
+                    and provide a prediction tool.</p>
+
+                <h3 id="a-analysis-page">A. Analysis Page (<code>pages/analysis.py</code>)</h3>
+
+                <p>This page presents various visualizations derived from the HDB resale data:</p>
+                <ul>
+                    <li><strong>Overall Trend of Average Resale Prices:</strong> A line chart showing how average HDB
+                        resale prices
+                        have changed over the years.</li>
+                    <li><strong>Resale Price Distribution by Flat Type:</strong> A pie chart illustrating the proportion
+                        of average
+                        resale prices for different flat types.</li>
+                    <li><strong>Average Resale Price per Town:</strong> An interactive choropleth map of Singapore,
+                        color-coded by
+                        the average resale price in each town. Users can click on a town to filter other charts.</li>
+                    <li><strong>Floor Area (sqm) vs. Resale Price:</strong> A scatter plot showing the relationship
+                        between the size
+                        of the flat and its resale price.</li>
+                    <li><strong>Distribution of Flat Types:</strong> A bar chart showing the count of resale
+                        transactions for each
+                        flat type.</li>
+                    <li><strong>Average Resale Price by Storey Range:</strong> A bar chart displaying how average resale
+                        prices vary
+                        across different storey ranges.</li>
+                </ul>
+
+                <p><strong>Interactivity:</strong></p>
+                <ul>
+                    <li>Clicking on a town in the choropleth map dynamically updates the "Trend of Average Resale
+                        Prices" and
+                        "Resale Price Distribution by Flat Type" charts to display data specific to the selected town.
+                    </li>
+                    <li>A "Reset Map" button reverts the filtered charts to show overall data.</li>
+                </ul>
+
+                <img src="../../images/analysis_page.png" alt="Analysis Page">
+
+                <h3 id="b-prediction-page">B. Prediction Page (<code>pages/prediction.py</code>)</h3>
+
+                <p>This page provides an interface for users to get HDB resale price predictions:</p>
+                <ul>
+                    <li><strong>User Inputs:</strong>
+                        <ul>
+                            <li>Town (Dropdown)</li>
+                            <li>Floor Area (sqm) (Numeric Input)</li>
+                            <li>Floor Level (Dropdown, e.g., '01 TO 03')</li>
+                            <li>Flat Type (Dropdown, e.g., '4 ROOM')</li>
+                            <li>Flat Model (Dropdown, e.g., 'Model A')</li>
+                            <li>Remaining Lease (Numeric Input, in years)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Prediction Mechanism:</strong>
+                        <ol>
+                            <li>When the user clicks the "Predict Price" button, the input values are collected.</li>
+                            <li>The average distance to the nearest MRT for the selected town is fetched from
+                                <code>data/town_mrt_distances.csv</code>.
+                            </li>
+                            <li>Categorical inputs are one-hot encoded to match the feature format used during model
+                                training.</li>
+                            <li>The <code>min_storey</code> and <code>max_storey</code> are extracted from the selected
+                                <code>floorLevel</code>.
+                            </li>
+                            <li>The current month is used as a feature.</li>
+                            <li>These features are then fed into the pre-trained XGBoost model
+                                (<code>xgb_random_search_model.pkl</code>).</li>
+                        </ol>
+                    </li>
+                    <li><strong>Output:</strong> The page displays the predicted HDB resale price (e.g., "Predicted
+                        Resale Price is
+                        S$ XXX,XXX").</li>
+                </ul>
+
+                <img src="../../images/prediction_page.png" alt="Prediction Page">
+
+                <hr>
+
+                <h2 id="project-structure">Project Structure</h2>
+
+                <pre>
+HDB-Resale-Prices-Prediction/
+├── .DS_Store
+├── .gitignore
+├── dashboard.py            # Main Dash application script
+├── main.ipynb              # Jupyter notebook for data processing, EDA, and model training
+├── Procfile                # For Heroku deployment
+├── README.md               # Project documentation (this file)
+├── requirements.txt        # Python dependencies
+├── assets/                 # CSS, logo for dashboard
+│   ├── logo.png
+│   ├── styles.css
+│   ├── model_comparison.png
+│   ├── analysis_page.png
+│   └── prediction_page.png
+├── data/
+│   ├── .DS_Store
+│   ├── clean_hdb_coordinate_data.csv # HDB flats with lat/lon
+│   ├── clean_hdb_resale_data.csv     # Main cleaned dataset for analysis/modeling
+│   ├── clean_mrt_data.csv            # Processed MRT station data
+│   ├── singapore_town_boundaries.json # GeoJSON for map visualizations
+│   ├── town_mrt_distances.csv        # Average distance to MRT per town
+│   ├── model/                        # Saved machine learning models
+│   │   ├── xgb_random_search_model.json # XGBoost model (alternative save format)
+│   │   └── xgb_random_search_model.pkl  # Primary XGBoost model file
+│   └── raw/                          # Original raw datasets
+│       ├── flat_data( Mar 2012 to Dec 2014).csv
+│       ├── flat_data(Jan 2015 to Dec 2016).csv
+│       ├── flat_data(Jan-2017 onwards).csv
+│       ├── MRT.geojson
+│       └── resale_price_index.csv
+└── pages/                  # Dash app pages
+    ├── analysis.py
+    ├── fetch_map_data.py   # (Potentially for map data, though main logic seems in analysis.py)
+    └── prediction.py
+</pre>
+
+                <hr>
+
+                <h2 id="tools-and-technologies">Tools and Technologies</h2>
+
+                <ul>
+                    <li><strong>Programming Language:</strong> Python</li>
+                    <li><strong>Data Manipulation & Analysis:</strong> Pandas, NumPy</li>
+                    <li><strong>Geospatial Analysis:</strong> GeoPandas, Shapely</li>
+                    <li><strong>Machine Learning:</strong> Scikit-learn , XGBoost</li>
+                    <li><strong>Data Visualization:</strong> Matplotlib, Seaborn (in <code>main.ipynb</code>), Plotly
+                        (for
+                        interactive dashboard charts)</li>
+                    <li><strong>Web Framework (Dashboard):</strong> Dash, Dash Bootstrap Components</li>
+                    <li><strong>Web Scraping (for MRT names in notebook):</strong> BeautifulSoup</li>
+                    <li><strong>Notebook Environment:</strong> Jupyter Notebook</li>
+                    <li><strong>Model Persistence:</strong> Joblib</li>
+                </ul>
+
+                <hr>
+
+                <h2 id="how-to-run-the-project">How to Run the Project</h2>
+
+                <h3>Prerequisites:</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>pip (Python package installer)</li>
+                    <li>Git (for cloning the repository)</li>
+                </ul>
+
+                <h3>Setup:</h3>
+                <ol>
+                    <li><strong>Clone the repository:</strong>
+                        <pre><code>git clone <repository_url></code></pre>
+                    </li>
+                    <li><strong>Navigate to the project directory:</strong>
+                        <pre><code>cd HDB-Resale-Prices-Prediction</code></pre>
+                    </li>
+                    <li><strong>Install dependencies:</strong> It's recommended to use a virtual environment.
+                        <pre><code>python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install -r requirements.txt</code></pre>
+                    </li>
+                </ol>
+
+                <h3>Running the Jupyter Notebook (for data processing & model training):</h3>
+                <ol>
+                    <li>Ensure your virtual environment is activated.</li>
+                    <li>Launch Jupyter Notebook:
+                        <pre><code>jupyter notebook</code></pre>
+                    </li>
+                    <li>In the Jupyter interface, open <code>main.ipynb</code>.</li>
+                    <li>Run the cells sequentially.
+                        <ul>
+                            <li><strong>Note:</strong> The section "Fetching Address Coordinates" in
+                                <code>main.ipynb</code> uses
+                                the OneMap API which requires an access token. This step was pre-computed and results
+                                saved to
+                                <code>data/clean_hdb_coordinate_data.csv</code>. If you re-run this specific section,
+                                you'll need to
+                                replace <code>"Bearer YOUR_ACCESS_TOKEN"</code> with a valid token. The rest of the
+                                notebook can run
+                                using the pre-computed CSV.
+                            </li>
+                            <li>Model training and saving steps are commented out by default to use pre-trained models.
+                                Uncomment
+                                them if you wish to retrain.</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h3>Running the Dashboard:</h3>
+                <ol>
+                    <li>Ensure your virtual environment is activated and dependencies are installed.</li>
+                    <li>Execute the main dashboard script:
+                        <pre><code>python dashboard.py</code></pre>
+                    </li>
+                    <li>Open your web browser and navigate to <code>http://120.0.0.1:8050/</code> (or the address shown
+                        in your
+                        terminal).</li>
+                </ol>
+
+                <hr>
+
+                <h2 id="key-results--findings">Key Results & Findings</h2>
+
+                <ul>
+                    <li><strong>Model Performance:</strong> The tuned XGBoost Regressor was selected as the
+                        best-performing model.
+                        <ul>
+                            <li><strong>Test Set RMSE:</strong> S$28,371.09</li>
+                            <li><strong>Test Set R² Score:</strong> 0.9700</li>
+                            <li>This indicates that the model can explain approximately 97% of the variance in HDB
+                                resale prices and
+                                has an average prediction error of about S$28,371.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Prediction Error Rate:</strong> The model's predictions deviate by approximately
+                        <strong>±5.82%</strong> from the actual resale price on average.
+                    </li>
+                    <li><strong>Key Factors Influencing Prices:</strong>
+                        <ul>
+                            <li><strong>Floor Area:</strong> Larger flats generally command higher prices.</li>
+                            <li><strong>Remaining Lease:</strong> Flats with longer remaining leases are typically more
+                                expensive.
+                            </li>
+                            <li><strong>Distance to Nearest MRT:</strong> Proximity to MRT stations is a significant
+                                factor, with
+                                flats closer to MRTs generally having higher values.</li>
+                            <li><strong>Town/Location:</strong> Prices vary significantly across different towns, with
+                                mature
+                                estates and central locations often being more expensive.</li>
+                            <li><strong>Flat Type:</strong> Larger flat types (e.g., 5 ROOM, Executive) are more
+                                expensive than
+                                smaller ones (e.g., 2 ROOM, 3 ROOM).</li>
+                            <li><strong>Storey Level:</strong> Higher floors often fetch slightly higher prices, though
+                                this can
+                                vary.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Market Trends:</strong> The EDA showed fluctuations in average resale prices over time,
+                        highlighting
+                        the importance of adjusting prices using the Resale Price Index for consistent modeling.</li>
+                </ul>
+
+                <hr>
+
+                <h2 id="future-enhancements">Future Enhancements</h2>
+
+                <ul>
+                    <li><strong>Real-time Data Integration:</strong> Implement mechanisms to automatically update the
+                        datasets from
+                        <code>data.gov.sg</code> or other relevant APIs to keep the model and analyses current.
+                    </li>
+                    <li><strong>Advanced Feature Engineering:</strong>
+                        <ul>
+                            <li>Incorporate more granular location-based features (e.g., proximity to schools, shopping
+                                malls,
+                                parks).</li>
+                            <li>Include macroeconomic indicators (e.g., interest rates, GDP growth, unemployment rates)
+                                that might
+                                affect the housing market.</li>
+                            <li>Consider recent transaction volumes or specific government policy announcements as
+                                features.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Model Exploration:</strong>
+                        <ul>
+                            <li>Experiment with other advanced regression models (e.g., LightGBM, CatBoost) or neural
+                                network-based
+                                approaches.</li>
+                            <li>Explore more sophisticated ensemble techniques.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Dashboard Enhancements:</strong>
+                        <ul>
+                            <li>Add more interactive filtering options to the Analysis page.</li>
+                            <li>Improve the UI/UX for better readability and user experience.</li>
+                            <li>Include feature importance plots from the model on the dashboard.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class="footer mt-5">
+        <p class="text-center">Copyright © 2024 Kaung Si Thu - All rights reserved.</p>
+    </div>
+    <!-- Bootstrap JS CDN -->
+    <script src="../../bootstrap/bootstrap.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script> -->
+
+    <!-- JS -->
+    <script src="../../script.js"></script>
+
+</body>
+
+</html>

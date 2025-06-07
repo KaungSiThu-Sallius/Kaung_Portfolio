@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const pageNumbersContainer = document.querySelector('.page-numbers');
 
     let allProjects = [
+        { title: 'HDB Resale Price Prediction and Analysis (ML)', category: 'ml', imgSrc: 'images/hdb_ml.png', detailPage: 'project_details/ML/hdb_analysis.html' },
         { title: 'Employee Turnover (Tableau)', category: 'tableau', imgSrc: 'images/employee_turnover.png', detailPage: 'project_details/Tableau/employee_turnover.html' },
         { title: 'Sleep Disorder (Tableau)', category: 'tableau', imgSrc: 'images/sleep_disorder.png', detailPage: 'project_details/Tableau/sleep_disorder.html' },
         { title: 'Employee Attrition Analysis (Excel)', category: 'excel', imgSrc: 'images/hr_analytics.png', detailPage: 'project_details/Excel/employee_attrition.html' },
